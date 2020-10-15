@@ -2,6 +2,7 @@ import 'package:expansion_card/expansion_card.dart';
 import 'package:flutter/material.dart';
 import 'package:procurex/requisition/newRequisition.dart';
 import 'package:intl/intl.dart';
+import 'package:procurex/utils/decimalTextInputFormatter.dart';
 import 'package:procurex/utils/drawer.dart';
 
 class Requisitions extends StatefulWidget {
@@ -39,7 +40,6 @@ class _RequisitionsState extends State<Requisitions> {
               qty: '10',
               status: 'Placed',
               date: '14-10-2020',
-              comment: 'Urgent',
               id: '2',
             ),
           ],
@@ -139,12 +139,14 @@ class _RequisitionItemState extends State<RequisitionItem> {
               SizedBox(
                 height: 10,
               ),
-              Text(
-                widget.comment,
-                style: TextStyle(
-                  color: Colors.black,
-                ),
-              ),
+              widget.comment == null
+                  ? Container()
+                  : Text(
+                      widget.comment,
+                      style: TextStyle(
+                        color: Colors.black,
+                      ),
+                    ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [

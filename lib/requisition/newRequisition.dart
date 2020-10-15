@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:procurex/requisition/requisitions.dart';
+import 'package:procurex/utils/decimalTextInputFormatter.dart';
 
 class NewRequisition extends StatefulWidget {
   @override
@@ -138,15 +139,5 @@ class _NewRequisitionState extends State<NewRequisition> {
         ),
       ),
     );
-  }
-}
-
-class DecimalTextInputFormatter extends TextInputFormatter {
-  @override
-  TextEditingValue formatEditUpdate(
-      TextEditingValue oldValue, TextEditingValue newValue) {
-    final regEx = RegExp(r"^\d*\.?\d*");
-    String newString = regEx.stringMatch(newValue.text) ?? "";
-    return newString == newValue.text ? newValue : oldValue;
   }
 }

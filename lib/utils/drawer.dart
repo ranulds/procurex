@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:procurex/delivery/delivery.dart';
 import 'package:procurex/requisition/requisitions.dart';
 import 'package:procurex/stock/stock.dart';
 
@@ -15,7 +16,7 @@ class _AppDrawerState extends State<AppDrawer> {
         padding: EdgeInsets.zero,
         children: <Widget>[
           DrawerHeader(
-            child: Text('Drawer Header'),
+            child: Text(''),
             decoration: BoxDecoration(
               color: Colors.blue,
             ),
@@ -33,6 +34,14 @@ class _AppDrawerState extends State<AppDrawer> {
             onTap: () {
               Navigator.of(context).pushAndRemoveUntil(
                   MaterialPageRoute(builder: (_) => Stock()),
+                  (Route<dynamic> route) => false);
+            },
+          ),
+          ListTile(
+            title: Text('Delivery Log'),
+            onTap: () {
+              Navigator.of(context).pushAndRemoveUntil(
+                  MaterialPageRoute(builder: (_) => Delivery()),
                   (Route<dynamic> route) => false);
             },
           ),

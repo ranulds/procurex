@@ -1,6 +1,6 @@
 import 'package:expansion_card/expansion_card.dart';
 import 'package:flutter/material.dart';
-import 'package:procurex/requisition/newRequisition.dart';
+import 'package:procurex/utils/decimalTextInputFormatter.dart';
 import 'package:procurex/utils/drawer.dart';
 
 class Stock extends StatefulWidget {
