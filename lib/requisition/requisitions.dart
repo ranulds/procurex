@@ -2,6 +2,7 @@ import 'package:expansion_card/expansion_card.dart';
 import 'package:flutter/material.dart';
 import 'package:procurex/requisition/newRequisition.dart';
 import 'package:intl/intl.dart';
+import 'package:procurex/utils/drawer.dart';
 
 class Requisitions extends StatefulWidget {
   @override
@@ -21,6 +22,7 @@ class _RequisitionsState extends State<Requisitions> {
         tooltip: 'New Requisition',
         child: Icon(Icons.add),
       ),
+      drawer: AppDrawer(),
       body: SafeArea(
         child: ListView(
           children: [
@@ -224,6 +226,7 @@ class _RequisitionItemState extends State<RequisitionItem> {
                                               print(_dateText.text);
                                               print(qty);
                                               print(comment);
+                                              Navigator.of(context).pop();
                                             }
                                           },
                                         ),
