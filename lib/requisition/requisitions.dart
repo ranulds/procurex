@@ -82,7 +82,7 @@ class _RequisitionItemState extends State<RequisitionItem> {
       context: context,
       initialDate: DateFormat('dd-MM-yyyy').parse(widget.date),
       firstDate: DateTime.now(),
-      lastDate: DateTime(2021),
+      lastDate: DateTime.now().add(Duration(days: 365)),
     );
     if (picked != null && picked != selectedDate)
       setState(() {
@@ -202,7 +202,7 @@ class _RequisitionItemState extends State<RequisitionItem> {
                                             suffixIcon: Icon(
                                               Icons.calendar_today,
                                               size: 26,
-                                              color: Colors.blue[900],
+                                              color: Colors.yellow[500],
                                             ),
                                           ),
                                           onTap: () {

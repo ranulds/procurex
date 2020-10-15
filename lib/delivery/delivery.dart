@@ -15,10 +15,11 @@ class _DeliveryState extends State<Delivery> {
 
   Future<void> _selectDate(BuildContext context) async {
     final DateTime picked = await showDatePicker(
-        context: context,
-        initialDate: selectedDate,
-        firstDate: DateTime.now(),
-        lastDate: DateTime(2021));
+      context: context,
+      initialDate: selectedDate,
+      firstDate: DateTime.now(),
+      lastDate: DateTime.now().add(Duration(days: 365)),
+    );
     if (picked != null && picked != selectedDate)
       setState(() {
         selectedDate = picked;
@@ -95,7 +96,7 @@ class _DeliveryState extends State<Delivery> {
                           suffixIcon: Icon(
                             Icons.calendar_today,
                             size: 26,
-                            color: Colors.blue[900],
+                            color: Colors.yellow[500],
                           ),
                         ),
                         onTap: () {
